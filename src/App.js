@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Tile from './Tile';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <><header>
+
+    </header>
+    <body>
+      <div className="tile-container">
+        <Tile imageURL="http://placekitten.com/200/200" tileDescription="I"/>
+        <Tile imageURL="http://placekitten.com/200/200" />
+        <Tile imageURL="http://placekitten.com/200/200" />
+        <Tile imageURL="http://placekitten.com/200/200" />
+        <Tile imageURL="http://placekitten.com/200/200" />
+        <Tile imageURL="http://placekitten.com/200/200" />
+        <Tile imageURL="http://placekitten.com/200/200" />
+        <Tile imageURL="http://placekitten.com/200/200" />
+        <Tile imageURL="http://placekitten.com/200/200" />
+        
+      </div>
+    </body></>
   );
 }
 
