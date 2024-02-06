@@ -13,41 +13,42 @@ code {
 }
 
 .tile-container {
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 100% of the viewport height */
+  width: 100%; /* 100% of the parent container */
+  background-color: #fefefe;
+  border: 10px yellow solid;
 }
 
 .tile {
-  flex: 0 0 12.5%;
-  box-sizing: border-box;
-  width: 225px;
-  height: 225px;
-  margin: 10px;
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s;
-  text-align: center;
-  flex-direction: column;
+  box-sizing: border-box; /* include padding and border in the element's total width and height */
+  display: flex; /* make the container flex */
+  flex: 0 0 11%; /* grow, shrink, initial main size (basis) */
+  flex-direction: column; /* stack items vertically */
+  margin: 7px; /* space between tiles */
+  align-items: center; /* center items horizontally, in this case */
+  border-radius: 10px; /* rounded corners */
+  cursor: pointer; /* change cursor to pointer */
+  transition: all 0.3s; /* smooth transition */
+  text-align: center; /* center text */
+  background-color: white; /* blue background */
+  border: 7px solid black; /* white border */
 }
 
 .image {
-  width: 100%;
+  width: auto;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
 .tileDescription {
-  font-size: 24px;
+  font-size: 36px;
   color: black;
   font-weight: bold;
-  
 }
