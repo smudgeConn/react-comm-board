@@ -5,13 +5,52 @@ import IIcon from './images/I-icon.svg';
 import wantIcon from './images/wantIcon.svg';
 
 function App() {
+  const wordArray = [
+    "I",
+    "want",
+    "get",
+    "make",
+    "not",
+    "more",
+    "that",
+    "who",
+    "mine",
+    "go",
+    "look",
+    "turn",
+    "help",
+    "all",
+    "here",
+    "what",
+    "you",
+    "like",
+    "open",
+    "do",
+    "stop",
+    "some",
+    "in",
+    "where",
+    "it",
+    "can",
+    "play",
+    "put",
+    "all done",
+    "on",
+    "uh oh",
+    "hey",
+  ]
   return (
     <><header>
 
     </header>
     <body>
       <div className="tile-container">
-        <Tile imageURL={ IIcon } tileDescription="I" alt="me by Ignat from Noun Project (CC BY 3.0)"/>
+        {
+          wordArray.map( word => {
+            return <Tile imageURL="http://placekitten.com/200/200" tileDescription={word}/>
+          })
+        } 
+        {/* <Tile imageURL={ IIcon } tileDescription="I" alt="me by Ignat from Noun Project (CC BY 3.0)"/>
         <Tile imageURL={ wantIcon } tileDescription="want" alt="Open Hand by lakonicon from Noun Project (CC BY 3.0)"/>
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="get"/>
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="make"/>
@@ -39,11 +78,24 @@ function App() {
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="can"/>
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="play"/>
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="put"/>
-        <Tile imageURL="http://placekitten.com/200/200" tileDescription="all done"/>
+        <Tile imageURL="http://placekitten.com/200/200" tileDescription="alldone"/>
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="on"/>
-        <Tile imageURL="http://placekitten.com/200/200" tileDescription="uh oh"/>
-        <Tile imageURL="http://placekitten.com/200/200" tileDescription="hey"/>
-        
+        <Tile imageURL="http://placekitten.com/200/200" tileDescription="uhoh"/>
+        <Tile imageURL="http://placekitten.com/200/200" tileDescription="hey"/> */}
+        {
+          // Create a loop to generate the tiles
+          // Create an array of objects
+          // Each object has a URL and a description
+          // Use the map function to loop through the array
+          // For each object in the array, create a Tile component
+          // Pass the URL and description to the Tile component
+          // The Tile component will use the URL and description to create an image and a description
+          // The Tile component will return the image and description
+          // The map function will return an array of images and descriptions
+          // The array of images and descriptions will be rendered to the screen
+        }
+
+
       </div>
     </body></>
   );
