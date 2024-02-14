@@ -1,12 +1,19 @@
-import React from 'react';
+import React from "react";
+const placeholderImage = "http://placekitten.com/200/200";
 
 const Tile = ({ imageURL, tileDescription }) => {
-    return (
-        <div className="tile">
-            <img className="image"  src={imageURL} alt="Tile Description" />
-            <div className='tileDescription'> { tileDescription }</div>
-        </div>
-    );
+  let image;
+  if (imageURL) {
+    image = imageURL;
+  } else {
+    image = placeholderImage;
+  }
+  return (
+    <div className="tile">
+      <img className="image" src={image} alt="Tile Description" />
+      <div className="tileDescription"> {tileDescription}</div>
+    </div>
+  );
 };
 
 export default Tile;
