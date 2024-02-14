@@ -39,7 +39,7 @@ function App() {
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="can"/>
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="play"/>
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="put"/>
-        <Tile imageURL="http://placekitten.com/200/200" tileDescription="finished"/>
+        <Tile imageURL="http://placekitten.com/200/200" tileDescription="all done"/>
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="on"/>
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="uh oh"/>
         <Tile imageURL="http://placekitten.com/200/200" tileDescription="hey"/>
