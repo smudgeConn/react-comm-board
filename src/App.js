@@ -2,12 +2,13 @@ import "./App.css";
 import Tile from "./Tile";
 import IIcon from "./images/I-icon.svg";
 import wantIcon from "./images/wantIcon.svg";
+import getIcon from "./images/getIcon.svg";
 
 function App() {
   const wordArray = [
     ["I", IIcon],
     ["want", wantIcon],
-    ["get"],
+    ["get", getIcon],
     ["make"],
     ["not"],
     ["more"],
