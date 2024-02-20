@@ -3,15 +3,18 @@ import Tile from "./Tile";
 import IIcon from "./images/I-icon.svg";
 import wantIcon from "./images/wantIcon.svg";
 import getIcon from "./images/getIcon.svg";
+import makeIcon from "./images/makeIcon.svg";
+import notIcon from "./images/notIcon.svg";
+import moreIcon from "./images/moreIcon.svg";
 
 function App() {
   const wordArray = [
     ["I", IIcon],
     ["want", wantIcon],
     ["get", getIcon],
-    ["make"],
-    ["not"],
-    ["more"],
+    ["make", makeIcon],
+    ["not", notIcon],
+    ["more", moreIcon],
     ["that"],
     ["who"],
     ["mine"],
