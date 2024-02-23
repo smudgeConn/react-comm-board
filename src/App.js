@@ -6,6 +6,10 @@ import getIcon from "./images/getIcon.svg";
 import makeIcon from "./images/makeIcon.svg";
 import notIcon from "./images/notIcon.svg";
 import moreIcon from "./images/moreIcon.svg";
+import thatIcon from "./images/thatIcon.svg";
+import whoIcon from "./images/whoIcon.svg";
+import myIcon from "./images/myIcon.svg";
+import goIcon from "./images/goIcon.svg";
 
 function App() {
   const wordArray = [
@@ -15,10 +19,10 @@ function App() {
     ["make", makeIcon],
     ["not", notIcon],
     ["more", moreIcon],
-    ["that"],
-    ["who"],
-    ["mine"],
-    ["go"],
+    ["that", thatIcon],
+    ["who", whoIcon],
+    ["mine", myIcon],
+    ["go", goIcon],
     ["look"],
     ["turn"],
     ["help"],
