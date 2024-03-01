@@ -15,40 +15,49 @@ code {
 .tile-container {
   box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
-  justify-content: center;
+  flex-flow: row wrap;
+  /* padding: 10px; */
+  justify-content: space-around;
+  align-content: space-around;
   align-items: center;
-  height: 100vh; /* 100% of the viewport height */
-  width: 100%; /* 100% of the parent container */
-  background-color: #fefefe;
-  border: 10px yellow solid;
+  height: 100vh;
+  width: auto;
+  background-color: lightblue;
+  /* border: 10px yellow solid; */
+}
+
+@media (max-width: 1180px){
+  .tile {
+
+  }
 }
 
 .tile {
-  box-sizing: border-box; /* include padding and border in the element's total width and height */
-  display: flex; /* make the container flex */
-  flex: 0 0 11%; /* grow, shrink, initial main size (basis) */
-  flex-direction: column; /* stack items vertically */
-  margin: 7px; /* space between tiles */
-  align-items: center; /* center items horizontally, in this case */
-  border-radius: 10px; /* rounded corners */
-  cursor: pointer; /* change cursor to pointer */
-  transition: all 0.3s; /* smooth transition */
-  text-align: center; /* center text */
-  background-color: white; /* blue background */
-  border: 7px solid black; /* white border */
+  box-sizing: border-box;
+  display: flex; 
+  flex: 0 0 10%;
+  flex-direction: column;
+  margin: 7px;
+  align-items: center;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  border: 7px solid black;
+  /* max-height: 80vh; */
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 .image {
   width: auto;
   max-width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
+  object-fit: contain;
 }
 
 .tileDescription {
-  font-size: 36px;
+  font-size: 24px;
   color: black;
   font-weight: bold;
 }
