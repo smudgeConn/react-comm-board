@@ -16,14 +16,13 @@ code {
   box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
-  /* padding: 10px; */
+  padding: 5px;
   justify-content: space-around;
   align-content: space-around;
   align-items: center;
   height: 100vh;
   width: auto;
   background-color: lightblue;
-  /* border: 10px yellow solid; */
 }
 
 @media (max-width: 1180px){
@@ -35,7 +34,7 @@ code {
 .tile {
   box-sizing: border-box;
   display: flex; 
-  flex: 0 0 10%;
+  flex: 0 0 11%;
   flex-direction: column;
   margin: 7px;
   align-items: center;
@@ -49,15 +48,13 @@ code {
 }
 
 .image {
-  width: auto;
-  max-width: 100%;
-  height: 100%;
-  /* object-fit: cover; */
-  object-fit: contain;
+  width: 100px;
+  height: 100px;
 }
 
 .tileDescription {
-  font-size: 24px;
+  font-size: 32px;
   color: black;
   font-weight: bold;
+  margin: 3px;
 }
