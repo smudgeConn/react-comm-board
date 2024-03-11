@@ -76,7 +76,7 @@ function App() {
 
   return (
     <>
-      <header></header>
+      <header className="header">nav bar place holder</header>
       <body>
         <div className="sentence-bar">
           <SentenceBar />

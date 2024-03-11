@@ -1,9 +1,7 @@
 import React from "react";
 
-const SentenceBar = () => {
-  return (
-    <div className="sentence-bar">{/* Render draggable tiles here */}</div>
-  );
-};
+function SentenceBar() {
+  return <div></div>;
+}
 
 export default SentenceBar;
