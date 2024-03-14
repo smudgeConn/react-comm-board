@@ -38,38 +38,38 @@ import heyIcon from "./images/heyIcon.svg";
 
 function App() {
   const wordArray = [
-    ["I", iIcon],
-    ["want", wantIcon],
-    ["get", getIcon],
-    ["make", makeIcon],
-    ["not", notIcon],
-    ["more", moreIcon],
-    ["that", thatIcon],
-    ["who", whoIcon],
-    ["mine", mineIcon],
-    ["go", goIcon],
-    ["look", lookIcon],
-    ["turn", turnIcon],
-    ["help", helpIcon],
-    ["all", allIcon],
-    ["here", hereIcon],
-    ["what", whatIcon],
-    ["you", youIcon],
-    ["like", likeIcon],
-    ["open", openIcon],
-    ["do", doIcon],
-    ["stop", stopIcon],
-    ["some", someIcon],
-    ["in", inIcon],
-    ["where", whereIcon],
-    ["it", itIcon],
-    ["can", canIcon],
-    ["play", playIcon],
-    ["put", putIcon],
-    ["finished", finishedIcon],
-    ["on", onIcon],
-    ["uh oh", uhohIcon],
-    ["hey", heyIcon],
+    { text: "I", image: iIcon },
+    { text: "want", image: wantIcon },
+    { text: "get", image: getIcon },
+    { text: "make", image: makeIcon },
+    { text: "not", image: notIcon },
+    { text: "more", image: moreIcon },
+    { text: "that", image: thatIcon },
+    { text: "who", image: whoIcon },
+    { text: "mine", image: mineIcon },
+    { text: "go", image: goIcon },
+    { text: "look", image: lookIcon },
+    { text: "turn", image: turnIcon },
+    { text: "help", image: helpIcon },
+    { text: "all", image: allIcon },
+    { text: "here", image: hereIcon },
+    { text: "what", image: whatIcon },
+    { text: "you", image: youIcon },
+    { text: "like", image: likeIcon },
+    { text: "open", image: openIcon },
+    { text: "do", image: doIcon },
+    { text: "stop", image: stopIcon },
+    { text: "some", image: someIcon },
+    { text: "in", image: inIcon },
+    { text: "where", image: whereIcon },
+    { text: "it", image: itIcon },
+    { text: "can", image: canIcon },
+    { text: "play", image: playIcon },
+    { text: "put", image: putIcon },
+    { text: "finished", image: finishedIcon },
+    { text: "on", image: onIcon },
+    { text: "uh oh", image: uhohIcon },
+    { text: "hey", image: heyIcon },
   ];
 
   // feeling bored? move the wordArray to a new file
@@ -84,7 +84,13 @@ function App() {
 
         <div className="tile-container">
           {wordArray.map((word) => {
-            return <Tile imageURL={word[1]} tileDescription={word[0]} />;
+            return (
+              <Tile
+                key={word.text}
+                imageURL={word.image}
+                tileDescription={word.text}
+              />
+            );
           })}
         </div>
       </body>
