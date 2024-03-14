@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,7 +17,6 @@ code {
 }
 
 .header {
-  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   flex: 0 0 auto;
@@ -22,7 +25,6 @@ code {
 }
 
 .sentence-bar {
-  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   flex: 0 0 auto;
@@ -32,7 +34,6 @@ code {
 }
 
 .tile-container {
-  box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
   padding: 5px;
@@ -43,7 +44,6 @@ code {
 }
 
 .tile {
-  box-sizing: border-box;
   display: flex; 
   flex-direction: column;
   flex: 1 1 11%;
