@@ -1,8 +1,7 @@
-// NEXT: Update Python code to comment out the image text in the SVG files and update the images
-
 import "./App.css";
-import Tile from "./Tile";
-import SentenceBar from "./SentenceBar";
+// import Tile from "./Tile";
+// import SentenceBar from "./SentenceBar";
+import { useState } from "react";
 import iIcon from "./images/meIcon.svg";
 import wantIcon from "./images/wantIcon.svg";
 import getIcon from "./images/getIcon.svg";
@@ -36,8 +35,33 @@ import onIcon from "./images/onIcon.svg";
 import uhohIcon from "./images/uhohIcon.svg";
 import heyIcon from "./images/heyIcon.svg";
 
-function App() {
-  const wordArray = [
+function Button({ word, onButtonClick }) {
+  let image;
+  if (word.image) {
+    image = word.image;
+  } else {
+    image = "http://placekitten.com/g/100/100";
+  }
+  return (
+    <div className="button" onClick={onButtonClick}>
+      <img className="image" src={image} alt="" />
+      <span className="text">{word.text}</span>
+    </div>
+  );
+}
+
+function Message({ message }) {
+  return <div className="message">{message}</div>;
+}
+
+export default function App() {
+  function onButtonClick(word) {
+    const nextMessage = message.slice();
+    nextMessage.push(<Button key={word.text} word={word} />);
+    setMessage(nextMessage);
+  }
+
+  const wordList = [
     { text: "I", image: iIcon },
     { text: "want", image: wantIcon },
     { text: "get", image: getIcon },
@@ -72,30 +96,25 @@ function App() {
     { text: "hey", image: heyIcon },
   ];
 
-  // feeling bored? move the wordArray to a new file
+  const [message, setMessage] = useState([]);
 
   return (
     <>
-      <header className="header">nav bar place holder</header>
-      <body>
-        <div className="sentence-bar">
-          <SentenceBar />
-        </div>
-
-        <div className="tile-container">
-          {wordArray.map((word) => {
-            return (
-              <Tile
-                key={word.text}
-                imageURL={word.image}
-                tileDescription={word.text}
-              />
-            );
-          })}
-        </div>
-      </body>
+      <div className="message-window">
+        <Message message={message} />
+        <button className="clear-message-btn">CLEAR</button>
+      </div>
+      <div className="board">
+        {wordList.map((word) => {
+          return (
+            <Button
+              key={word.text}
+              word={word}
+              onButtonClick={() => onButtonClick(word)}
+            />
+          );
+        })}
+      </div>
     </>
   );
 }
-
-export default App;
