@@ -35,40 +35,58 @@ import onIcon from "./images/onIcon.svg";
 import uhohIcon from "./images/uhohIcon.svg";
 import heyIcon from "./images/heyIcon.svg";
 
-function Button({ word, onButtonClick }) {
+// Button component
+// IN: word (type: object), handleButtonClick (type: function)
+// OUT: a div with an image and text
+function Button({ word, handleButtonClick }) {
   return (
-    <div className="button" onClick={onButtonClick}>
+    <div className="button" onClick={handleButtonClick}>
       <img className="image" src={word.image} alt="" />
       <span className="text">{word.text}</span>
     </div>
   );
 }
 
+// Message component
+// IN: message (type: array)
+// OUT: a div with a message
 function Message({ message }) {
   return <div className="message">{message}</div>;
 }
 
+// App component
+// IN: none
+// OUT: a div with a message window and a board
 export default function App() {
-  function onButtonClick(word) {
+  //
+  // handleButtonClick function
+  // IN: word (type: object)
+  // ACTION: make a copy of the message array,
+  // add a Button component to the end of the array,
+  // and set the message state to the new array
+  // OUT: none
+  function handleButtonClick(word) {
     const nextMessage = message.slice();
     nextMessage.push(<Button key={word.text} word={word} />);
     setMessage(nextMessage);
   }
 
+  // handleClearClick function
+  // IN: none
+  // ACTION: set the message state to an empty array
+  // OUT: none
   function handleClearClick() {
     setMessage([]);
   }
 
+  // handleDeleteClick function
+  // IN: none
+  // ACTION: remove the last Button component from the message array
+  // OUT: none
   function handleDeleteClick() {
-    // TO DO
-  }
-
-  function mouseDown() {
-    setBackground("#ff9f1c");
-  }
-
-  function mouseUp() {
-    setBackground("#fdfffc");
+    const nextMessage = message.slice();
+    nextMessage.pop();
+    setMessage(nextMessage);
   }
 
   const wordList = [
@@ -107,7 +125,6 @@ export default function App() {
   ];
 
   const [message, setMessage] = useState([]);
-  const [background, setBackground] = useState("#fdfffc");
 
   return (
     <>
@@ -117,7 +134,9 @@ export default function App() {
           <button className="clear-btn" onClick={handleClearClick}>
             CLEAR ALL
           </button>
-          <button className="del-btn">DELETE</button>
+          <button className="del-btn" onClick={handleDeleteClick}>
+            DELETE
+          </button>
         </div>
       </div>
       <div className="board">
@@ -126,7 +145,7 @@ export default function App() {
             <Button
               key={word.text}
               word={word}
-              onButtonClick={() => onButtonClick(word)}
+              handleButtonClick={() => handleButtonClick(word)}
             />
           );
         })}
