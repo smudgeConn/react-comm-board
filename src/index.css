@@ -1,6 +1,8 @@
+/* https://coolors.co/palette/011627-fdfffc-2ec4b6-e71d36-ff9f1c */
+
 * {
   box-sizing: border-box;
-  background-color: whitesmoke;
+  background-color: #fdfffc;
 }
 
 body {
@@ -20,31 +22,45 @@ code {
 .message-window {
   display: flex;
   flex-direction: row;
-  min-height: 16vh;
-  background-color: black;
+  justify-content: space-between;
+  min-height: 20vh;
+  /* border-bottom: 10px #011627 solid; */
+}
+
+.message-buttons {
+  display: flex;
+  flex-direction: column;
 }
 
 .message {
- background-color: lightyellow;
- display: flex;
- flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-.clear-message {
-  background-color: lightsteelblue;
+.del-btn {
+  height: 50%;
+  background-color: #2ec4b6;
+}
+
+.clear-btn {
+  height: 50%;
+  background-color: #e71d36;
 }
 
 .board {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: lightcyan;
+  justify-content: space-evenly;
+  flex: auto;
+  height: 80vh;
+  max-width: fit-content;
+  background-color: #011627;
 }
 
 .button {
   display: flex;
-  border: 5px solid black;
-  /* background-color: red; */
+  border: 5px solid #011627;
   border-radius: 10px;
   /* min-width: 12vh; */
   flex-direction: column;

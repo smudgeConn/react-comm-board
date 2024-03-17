@@ -36,15 +36,9 @@ import uhohIcon from "./images/uhohIcon.svg";
 import heyIcon from "./images/heyIcon.svg";
 
 function Button({ word, onButtonClick }) {
-  let image;
-  if (word.image) {
-    image = word.image;
-  } else {
-    image = "http://placekitten.com/g/100/100";
-  }
   return (
     <div className="button" onClick={onButtonClick}>
-      <img className="image" src={image} alt="" />
+      <img className="image" src={word.image} alt="" />
       <span className="text">{word.text}</span>
     </div>
   );
@@ -59,6 +53,22 @@ export default function App() {
     const nextMessage = message.slice();
     nextMessage.push(<Button key={word.text} word={word} />);
     setMessage(nextMessage);
+  }
+
+  function handleClearClick() {
+    setMessage([]);
+  }
+
+  function handleDeleteClick() {
+    // TO DO
+  }
+
+  function mouseDown() {
+    setBackground("#ff9f1c");
+  }
+
+  function mouseUp() {
+    setBackground("#fdfffc");
   }
 
   const wordList = [
@@ -97,12 +107,18 @@ export default function App() {
   ];
 
   const [message, setMessage] = useState([]);
+  const [background, setBackground] = useState("#fdfffc");
 
   return (
     <>
       <div className="message-window">
         <Message message={message} />
-        <button className="clear-message-btn">CLEAR</button>
+        <div className="message-buttons">
+          <button className="clear-btn" onClick={handleClearClick}>
+            CLEAR ALL
+          </button>
+          <button className="del-btn">DELETE</button>
+        </div>
       </div>
       <div className="board">
         {wordList.map((word) => {
