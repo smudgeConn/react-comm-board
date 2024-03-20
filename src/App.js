@@ -65,7 +65,7 @@ export default function App() {
   // add a Button component to the end of the array,
   // and set the message state to the new array
   // OUT: none
-  function handleButtonClick(word) {
+  function handleButtonClick(word, isMouseDown) {
     const nextMessage = message.slice();
     nextMessage.push(<Button key={word.text} word={word} />);
     setMessage(nextMessage);
@@ -89,6 +89,8 @@ export default function App() {
     setMessage(nextMessage);
   }
 
+  // wordList array:
+  // an array of objects with text and image properties
   const wordList = [
     { text: "I", image: iIcon },
     { text: "want", image: wantIcon },
@@ -124,7 +126,15 @@ export default function App() {
     { text: "hey", image: heyIcon },
   ];
 
+  // message state:
+  // message array (begins as empty array)
+  // setMessage function (updates the message array)
   const [message, setMessage] = useState([]);
+
+  // isMouseDown state:
+  // boolean (begins as false)
+  // setMouseDown function (updates the isMouseDown state)
+  const [isMouseDown, setIsMouseDown] = useState(false);
 
   return (
     <>
