@@ -37,11 +37,16 @@ import heyIcon from "./images/heyIcon.svg";
 // IN: word (type: object), handleButtonClick (type: function)
 // OUT: a div with an image and text
 function MyButton({ word, handleButtonClick }) {
+  const [backgroundColor, setBackgroundColor] = useState("#fdfffc");
+  const onClick = () => {
+    handleButtonClick();
+    setBackgroundColor("hotpink");
+  };
   return (
     <div
       className="button"
-      style={{ backgroundColor: "#fdfffc" }}
-      onClick={handleButtonClick}
+      style={{ backgroundColor: backgroundColor }}
+      onClick={onClick}
     >
       <img className="image" src={word.image} alt="" />
       <span className="text">{word.text}</span>
@@ -67,7 +72,7 @@ export default function App() {
   // add a Button component to the end of the array,
   // and set the message state to the new array
   // OUT: none
-  function handleButtonClick(word, isMouseDown) {
+  function putWordInMessage(word) {
     const nextMessage = message.slice();
     nextMessage.push(<MyButton key={word.text} word={word} />);
     setMessage(nextMessage);
@@ -152,7 +157,7 @@ export default function App() {
             <MyButton
               key={word.text}
               word={word}
-              handleButtonClick={() => handleButtonClick(word)}
+              handleButtonClick={() => putWordInMessage(word)}
             />
           );
         })}
