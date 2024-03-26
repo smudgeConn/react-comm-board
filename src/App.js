@@ -1,6 +1,4 @@
 import "./App.css";
-// import Tile from "./Tile";
-// import SentenceBar from "./SentenceBar";
 import { useState } from "react";
 import iIcon from "./images/meIcon.svg";
 import wantIcon from "./images/wantIcon.svg";
@@ -38,9 +36,13 @@ import heyIcon from "./images/heyIcon.svg";
 // Button component
 // IN: word (type: object), handleButtonClick (type: function)
 // OUT: a div with an image and text
-function Button({ word, handleButtonClick }) {
+function MyButton({ word, handleButtonClick }) {
   return (
-    <div className="button" onClick={handleButtonClick}>
+    <div
+      className="button"
+      style={{ backgroundColor: "#fdfffc" }}
+      onClick={handleButtonClick}
+    >
       <img className="image" src={word.image} alt="" />
       <span className="text">{word.text}</span>
     </div>
@@ -67,7 +69,7 @@ export default function App() {
   // OUT: none
   function handleButtonClick(word, isMouseDown) {
     const nextMessage = message.slice();
-    nextMessage.push(<Button key={word.text} word={word} />);
+    nextMessage.push(<MyButton key={word.text} word={word} />);
     setMessage(nextMessage);
   }
 
@@ -131,11 +133,6 @@ export default function App() {
   // setMessage function (updates the message array)
   const [message, setMessage] = useState([]);
 
-  // isMouseDown state:
-  // boolean (begins as false)
-  // setMouseDown function (updates the isMouseDown state)
-  const [isMouseDown, setIsMouseDown] = useState(false);
-
   return (
     <>
       <div className="message-window">
@@ -152,7 +149,7 @@ export default function App() {
       <div className="board">
         {wordList.map((word) => {
           return (
-            <Button
+            <MyButton
               key={word.text}
               word={word}
               handleButtonClick={() => handleButtonClick(word)}
