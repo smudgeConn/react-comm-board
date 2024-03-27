@@ -40,7 +40,10 @@ function MyButton({ word, handleButtonClick }) {
   const [backgroundColor, setBackgroundColor] = useState("#fdfffc");
   const onClick = () => {
     handleButtonClick();
-    setBackgroundColor("hotpink");
+    setBackgroundColor("#ff9f1c");
+    setTimeout(() => {
+      setBackgroundColor("#fdfffc");
+    }, 500);
   };
   return (
     <div
