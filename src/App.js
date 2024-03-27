@@ -77,7 +77,9 @@ export default function App() {
   // OUT: none
   function putWordInMessage(word) {
     const nextMessage = message.slice();
-    nextMessage.push(<MyButton key={word.text} word={word} />);
+    if (nextMessage.length < 15) {
+      nextMessage.push(<MyButton key={word.text} word={word} />);
+    }
     setMessage(nextMessage);
   }
 

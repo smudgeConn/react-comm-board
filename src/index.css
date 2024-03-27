@@ -60,7 +60,7 @@ code {
 
 .button {
   display: flex;
-  border: 5px solid #011627;
+  border: 5px solid white;
   border-radius: 10px;
   /* min-width: 12vh; */
   flex-direction: column;
