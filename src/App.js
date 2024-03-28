@@ -33,25 +33,6 @@ import onIcon from "./images/onIcon.svg";
 import uhohIcon from "./images/uhohIcon.svg";
 import heyIcon from "./images/heyIcon.svg";
 
-function ArrowsDoStuff() {
-  const handleKeyPress = (e) => {
-    if (e.key === "ArrowUp") {
-      console.log(`Do up action`);
-      console.log();
-    } else if (e.key === "ArrowDown") {
-      console.log(`Do down action`);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyPress);
-
-    return function () {
-      document.removeEventListener("keydown", handleKeyPress);
-    };
-  }, []);
-}
-
 // Button component
 // IN: word (type: object), handleButtonClick (type: function)
 // OUT: a div with an image and text
@@ -83,6 +64,8 @@ function Message({ message }) {
   return <div className="message">{message}</div>;
 }
 
+let currentMessageIndex = -1;
+
 // App component
 // IN: none
 // OUT: a div with a message window and a board
@@ -102,13 +85,42 @@ export default function App() {
     setMessage(nextMessage);
   }
 
+  function ArrowsDoStuff() {
+    const handleKeyPress = (e) => {
+      if (e.key === "ArrowUp") {
+        if (history.length > 0 && currentMessageIndex <= history.length - 1) {
+          if (currentMessageIndex < history.length - 1) currentMessageIndex++;
+          setMessage(history[currentMessageIndex]);
+        }
+      } else if (e.key === "ArrowDown") {
+        if (history.length > 0 && currentMessageIndex > 0) {
+          currentMessageIndex--;
+          setMessage(history[currentMessageIndex]);
+        }
+      }
+      console.log("currentMessageIndex", currentMessageIndex);
+    };
+
+    useEffect(() => {
+      document.addEventListener("keydown", handleKeyPress);
+
+      return function () {
+        document.removeEventListener("keydown", handleKeyPress);
+      };
+    });
+  }
+
   // handleClearClick function
   // IN: none
   // ACTION: set the message state to an empty array
   // OUT: none
   function handleClearClick() {
-    setHistory(history.concat([message]));
+    if (currentMessageIndex === -1) {
+      history.unshift(message);
+      setHistory(history);
+    }
     setMessage([]);
+    currentMessageIndex = -1;
   }
 
   // handleDeleteClick function
@@ -163,8 +175,9 @@ export default function App() {
   // setMessage function (updates the message array)
   const [message, setMessage] = useState([]);
 
-  const [history, setHistory] = useState([Array(15).fill(null)]);
+  const [history, setHistory] = useState([]);
   console.log("history", history);
+  console.log("Hx length", history.length);
 
   return (
     <>
