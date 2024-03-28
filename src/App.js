@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import iIcon from "./images/meIcon.svg";
 import wantIcon from "./images/wantIcon.svg";
 import getIcon from "./images/getIcon.svg";
@@ -32,6 +32,25 @@ import finishedIcon from "./images/finishedIcon.svg";
 import onIcon from "./images/onIcon.svg";
 import uhohIcon from "./images/uhohIcon.svg";
 import heyIcon from "./images/heyIcon.svg";
+
+function ArrowsDoStuff() {
+  const handleKeyPress = (e) => {
+    if (e.key === "ArrowUp") {
+      console.log(`Do up action`);
+      console.log();
+    } else if (e.key === "ArrowDown") {
+      console.log(`Do down action`);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+
+    return function () {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+}
 
 // Button component
 // IN: word (type: object), handleButtonClick (type: function)
@@ -88,6 +107,7 @@ export default function App() {
   // ACTION: set the message state to an empty array
   // OUT: none
   function handleClearClick() {
+    setHistory(history.concat([message]));
     setMessage([]);
   }
 
@@ -143,8 +163,12 @@ export default function App() {
   // setMessage function (updates the message array)
   const [message, setMessage] = useState([]);
 
+  const [history, setHistory] = useState([Array(15).fill(null)]);
+  console.log("history", history);
+
   return (
     <>
+      <ArrowsDoStuff />
       <div className="message-window">
         <Message message={message} />
         <div className="message-buttons">
