@@ -48,24 +48,18 @@ code {
 }
 
 .board {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  flex: auto;
-  height: 80vh;
-  max-width: fit-content;
-  background-color: #011627;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .button {
   display: flex;
-  border: 5px solid white;
+  border: 5px solid black;
   border-radius: 10px;
   /* min-width: 12vh; */
   flex-direction: column;
   justify-content: center;
-  flex: 0 1 11%;
+  /* flex: 0 1 11%; */
   margin: 2px;
   align-items: center;
   text-align: center;

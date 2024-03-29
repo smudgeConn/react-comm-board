@@ -40,42 +40,42 @@ import heyIcon from "./images/heyIcon.svg";
 // universalCoreVocabulary array:
 // an array of objects with text and image properties
 const universalCoreVocabulary = [
-  { text: "different" },
-  { text: "good" },
-  { text: "he" },
-  { text: "she" },
-  { text: "I", image: iIcon },
+  { text: "like", image: likeIcon },
   { text: "want", image: wantIcon },
   { text: "get", image: getIcon },
   { text: "make", image: makeIcon },
-  { text: "not", image: notIcon },
+  { text: "good" },
   { text: "more", image: moreIcon },
-  { text: "that", image: thatIcon },
-  { text: "who", image: whoIcon },
-  { text: "mine", image: mineIcon },
+  { text: "not", image: notIcon },
   { text: "go", image: goIcon },
   { text: "look", image: lookIcon },
   { text: "turn", image: turnIcon },
   { text: "help", image: helpIcon },
-  { text: "all", image: allIcon },
-  { text: "here", image: hereIcon },
-  { text: "what", image: whatIcon },
-  { text: "you", image: youIcon },
-  { text: "like", image: likeIcon },
+  { text: "different" },
+  { text: "I", image: iIcon },
+  { text: "he" },
   { text: "open", image: openIcon },
   { text: "do", image: doIcon },
-  { text: "stop", image: stopIcon },
-  { text: "some", image: someIcon },
-  { text: "in", image: inIcon },
-  { text: "where", image: whereIcon },
-  { text: "it", image: itIcon },
-  { text: "can", image: canIcon },
-  { text: "play", image: playIcon },
   { text: "put", image: putIcon },
-  { text: "finished", image: finishedIcon },
+  { text: "same" },
+  { text: "you", image: youIcon },
+  { text: "she" },
+  { text: "that", image: thatIcon },
+  { text: "up" },
+  { text: "all", image: allIcon },
+  { text: "some", image: someIcon },
+  { text: "it", image: itIcon },
+  { text: "here", image: hereIcon },
+  { text: "in", image: inIcon },
   { text: "on", image: onIcon },
-  { text: "uh oh", image: uhohIcon },
-  { text: "hey", image: heyIcon },
+  { text: "can", image: canIcon },
+  { text: "finished", image: finishedIcon },
+  { text: "where", image: whereIcon },
+  { text: "what", image: whatIcon },
+  { text: "why" },
+  { text: "who", image: whoIcon },
+  { text: "when" },
+  { text: "stop", image: stopIcon },
 ];
 
 // Button component
@@ -208,7 +208,6 @@ export default function App() {
         {universalCoreVocabulary.map((word) => {
           return (
             <MyButton
-              key={word.text}
               word={word}
               handleButtonClick={() => putWordInMessage(word)}
             />
