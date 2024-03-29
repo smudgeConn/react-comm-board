@@ -32,11 +32,58 @@ import finishedIcon from "./images/finishedIcon.svg";
 import onIcon from "./images/onIcon.svg";
 import uhohIcon from "./images/uhohIcon.svg";
 import heyIcon from "./images/heyIcon.svg";
+// import differentIcon from "./images/differentIcon.svg";
+// import goodIcon from "./images/goodIcon.svg";
+// import heIcon from "./images/heIcon.svg";
+// import sheIcon from "./images/sheIcon.svg";
+
+// universalCoreVocabulary array:
+// an array of objects with text and image properties
+const universalCoreVocabulary = [
+  { text: "different" },
+  { text: "good" },
+  { text: "he" },
+  { text: "she" },
+  { text: "I", image: iIcon },
+  { text: "want", image: wantIcon },
+  { text: "get", image: getIcon },
+  { text: "make", image: makeIcon },
+  { text: "not", image: notIcon },
+  { text: "more", image: moreIcon },
+  { text: "that", image: thatIcon },
+  { text: "who", image: whoIcon },
+  { text: "mine", image: mineIcon },
+  { text: "go", image: goIcon },
+  { text: "look", image: lookIcon },
+  { text: "turn", image: turnIcon },
+  { text: "help", image: helpIcon },
+  { text: "all", image: allIcon },
+  { text: "here", image: hereIcon },
+  { text: "what", image: whatIcon },
+  { text: "you", image: youIcon },
+  { text: "like", image: likeIcon },
+  { text: "open", image: openIcon },
+  { text: "do", image: doIcon },
+  { text: "stop", image: stopIcon },
+  { text: "some", image: someIcon },
+  { text: "in", image: inIcon },
+  { text: "where", image: whereIcon },
+  { text: "it", image: itIcon },
+  { text: "can", image: canIcon },
+  { text: "play", image: playIcon },
+  { text: "put", image: putIcon },
+  { text: "finished", image: finishedIcon },
+  { text: "on", image: onIcon },
+  { text: "uh oh", image: uhohIcon },
+  { text: "hey", image: heyIcon },
+];
 
 // Button component
 // IN: word (type: object), handleButtonClick (type: function)
 // OUT: a div with an image and text
 function MyButton({ word, handleButtonClick }) {
+  const placeholderImage = "https://picsum.photos/200/300";
+  const imageSource = word.image ? word.image : placeholderImage;
   const [backgroundColor, setBackgroundColor] = useState("#fdfffc");
   const onClick = () => {
     handleButtonClick();
@@ -51,7 +98,7 @@ function MyButton({ word, handleButtonClick }) {
       style={{ backgroundColor: backgroundColor }}
       onClick={onClick}
     >
-      <img className="image" src={word.image} alt="" />
+      <img className="image" src={imageSource} alt="" />
       <span className="text">{word.text}</span>
     </div>
   );
@@ -64,7 +111,8 @@ function Message({ message }) {
   return <div className="message">{message}</div>;
 }
 
-let currentMessageIndex = -1;
+let currentMessageIndex = -1; // -1 means no message is selected
+// ask Rob if this is acceptable to place outside of the App component
 
 // App component
 // IN: none
@@ -80,7 +128,7 @@ export default function App() {
   function putWordInMessage(word) {
     const nextMessage = message.slice();
     if (nextMessage.length < 15) {
-      nextMessage.push(<MyButton key={word.text} word={word} />);
+      nextMessage.push(<MyButton key={nextMessage.length} word={word} />);
     }
     setMessage(nextMessage);
   }
@@ -133,43 +181,6 @@ export default function App() {
     setMessage(nextMessage);
   }
 
-  // wordList array:
-  // an array of objects with text and image properties
-  const wordList = [
-    { text: "I", image: iIcon },
-    { text: "want", image: wantIcon },
-    { text: "get", image: getIcon },
-    { text: "make", image: makeIcon },
-    { text: "not", image: notIcon },
-    { text: "more", image: moreIcon },
-    { text: "that", image: thatIcon },
-    { text: "who", image: whoIcon },
-    { text: "mine", image: mineIcon },
-    { text: "go", image: goIcon },
-    { text: "look", image: lookIcon },
-    { text: "turn", image: turnIcon },
-    { text: "help", image: helpIcon },
-    { text: "all", image: allIcon },
-    { text: "here", image: hereIcon },
-    { text: "what", image: whatIcon },
-    { text: "you", image: youIcon },
-    { text: "like", image: likeIcon },
-    { text: "open", image: openIcon },
-    { text: "do", image: doIcon },
-    { text: "stop", image: stopIcon },
-    { text: "some", image: someIcon },
-    { text: "in", image: inIcon },
-    { text: "where", image: whereIcon },
-    { text: "it", image: itIcon },
-    { text: "can", image: canIcon },
-    { text: "play", image: playIcon },
-    { text: "put", image: putIcon },
-    { text: "finished", image: finishedIcon },
-    { text: "on", image: onIcon },
-    { text: "uh oh", image: uhohIcon },
-    { text: "hey", image: heyIcon },
-  ];
-
   // message state:
   // message array (begins as empty array)
   // setMessage function (updates the message array)
@@ -194,7 +205,7 @@ export default function App() {
         </div>
       </div>
       <div className="board">
-        {wordList.map((word) => {
+        {universalCoreVocabulary.map((word) => {
           return (
             <MyButton
               key={word.text}
