@@ -127,8 +127,14 @@ export default function App() {
   // OUT: none
   function putWordInMessage(word) {
     const nextMessage = message.slice();
-    if (nextMessage.length < 15) {
-      nextMessage.push(<MyButton key={nextMessage.length} word={word} />);
+    if (nextMessage.length < 10) {
+      nextMessage.push(
+        <MyButton
+          className="message-word"
+          key={nextMessage.length}
+          word={word}
+        />
+      );
     }
     setMessage(nextMessage);
   }
@@ -191,10 +197,11 @@ export default function App() {
   console.log("Hx length", history.length);
 
   return (
-    <>
+    <div className="app">
       <ArrowsDoStuff />
+      <div className="side-nav">under construction</div>
       <div className="message-window">
-        <Message message={message} />
+        <Message message={message} className="message" />
         <div className="message-buttons">
           <button className="clear-btn" onClick={handleClearClick}>
             CLEAR ALL
@@ -204,16 +211,18 @@ export default function App() {
           </button>
         </div>
       </div>
+      <div className="nav-bar">N A V B A R </div>
       <div className="board">
         {universalCoreVocabulary.map((word) => {
           return (
             <MyButton
+              key={word.text}
               word={word}
               handleButtonClick={() => putWordInMessage(word)}
             />
           );
         })}
       </div>
-    </>
+    </div>
   );
 }

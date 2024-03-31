@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   background-color: #fdfffc;
+  border-radius: .5rem;
 }
 
 body {
@@ -18,58 +19,140 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.message-window {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  min-height: 20vh;
-  /* border-bottom: 10px #011627 solid; */
+.app {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(14, 1fr);
+  
+  padding: .5rem;
+  gap: .5rem;
+  
+  max-height: 100dvh;
+  max-width: 100dvw;
 }
 
-.message-buttons {
-  display: flex;
-  flex-direction: column;
+.side-nav {
+  background-color: orange;
+  
+  grid-column: 1 / span 1;
+  grid-row: 1 / -1;
+  
+  padding: .5rem;
+  gap: .5rem;
+}
+
+.message-window {
+  background-color: aqua;
+  
+  grid-column: 2 / -1;
+  grid-row: 1 / span 2;
+  
+  padding: .5rem;
+  gap: .5rem;
+  
+  display: grid;
+  grid-template-columns: 90% 10%;
 }
 
 .message {
+  background-color: black;
+
+  max-height: 10%;
+
   display: flex;
   flex-direction: row;
+  flex: auto;
+
+  padding: .5rem;
+  gap: .5rem;
+}
+
+.message-buttons {
+  background-color: yellow;
+
+  padding: .5rem;
+  gap: .5rem;
+  margin: auto;
+
+  height: 100%;
+  width: auto;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
 .del-btn {
-  height: 50%;
   background-color: #2ec4b6;
+
+  padding: .5rem;
+  gap: .5rem;
+
+  grid-row: 2;
 }
 
 .clear-btn {
-  height: 50%;
   background-color: #e71d36;
+  
+  grid-row: 1;
+
+  padding: .5rem;
+  gap: .5rem;
+}
+
+.nav-bar {
+background-color: grey;
+
+padding: .5rem;
+margin: .5rem;  
+
+grid-column: 2 / -1;
+grid-row: 3 / span 1;
 }
 
 .board {
+  background-color: LIME;
+
+  width: 100%;
+
+  grid-row: 4 / -1;
+  grid-column: 2 / -1;
+  
+  padding: .5rem;
+  gap: .5rem;
+  
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: .5rem;
+
+
+}
+
+.message-word{
+
 }
 
 .button {
+  grid-row: 1 span;
+  grid-column: 1 span;
+  /* height: 50%; */
+  /* width: 50%; */
   display: flex;
-  border: 5px solid black;
-  border-radius: 10px;
-  /* min-width: 12vh; */
   flex-direction: column;
-  justify-content: center;
-  /* flex: 0 1 11%; */
-  margin: 2px;
-  align-items: center;
-  text-align: center;
+  border: .2rem solid black;
+  border-radius: .5rem;
 }
 
 .text {
   font-size: 2em;
+  margin: auto;
 }
 
 .image {
-  height: 100px;
-  /* width: 100px; */
+  width: 50%;
+  height: 50%;
+  /* max-width: 50%; */
+  /* max-height: 50%; */
+  margin: auto;
+  border-radius: 0;
 }
