@@ -1,4 +1,5 @@
 import "./App.css";
+import "./index.css";
 import { useState, useEffect } from "react";
 import iIcon from "./images/meIcon.svg";
 import wantIcon from "./images/wantIcon.svg";
@@ -26,12 +27,9 @@ import inIcon from "./images/inIcon.svg";
 import whereIcon from "./images/whereIcon.svg";
 import itIcon from "./images/itIcon.svg";
 import canIcon from "./images/canIcon.svg";
-import playIcon from "./images/playIcon.svg";
 import putIcon from "./images/putIcon.svg";
 import finishedIcon from "./images/finishedIcon.svg";
 import onIcon from "./images/onIcon.svg";
-import uhohIcon from "./images/uhohIcon.svg";
-import heyIcon from "./images/heyIcon.svg";
 // import differentIcon from "./images/differentIcon.svg";
 // import goodIcon from "./images/goodIcon.svg";
 // import heIcon from "./images/heIcon.svg";
@@ -82,7 +80,7 @@ const universalCoreVocabulary = [
 // IN: word (type: object), handleButtonClick (type: function)
 // OUT: a div with an image and text
 function MyButton({ word, handleButtonClick }) {
-  const placeholderImage = "https://picsum.photos/200/300";
+  const placeholderImage = "https://picsum.photos/100/100";
   const imageSource = word.image ? word.image : placeholderImage;
   const [backgroundColor, setBackgroundColor] = useState("#fdfffc");
   const onClick = () => {
@@ -94,7 +92,7 @@ function MyButton({ word, handleButtonClick }) {
   };
   return (
     <div
-      className="button"
+      className="my-button"
       style={{ backgroundColor: backgroundColor }}
       onClick={onClick}
     >
@@ -127,7 +125,7 @@ export default function App() {
   // OUT: none
   function putWordInMessage(word) {
     const nextMessage = message.slice();
-    if (nextMessage.length < 10) {
+    if (nextMessage.length < 9) {
       nextMessage.push(
         <MyButton
           className="message-word"
@@ -193,15 +191,15 @@ export default function App() {
   const [message, setMessage] = useState([]);
 
   const [history, setHistory] = useState([]);
-  console.log("history", history);
-  console.log("Hx length", history.length);
+  // console.log("history", history);
+  // console.log("Hx length", history.length);
 
   return (
     <div className="app">
       <ArrowsDoStuff />
-      <div className="side-nav">under construction</div>
+      <div className="side-nav">side-nav</div>
       <div className="message-window">
-        <Message message={message} className="message" />
+        <Message message={message} />
         <div className="message-buttons">
           <button className="clear-btn" onClick={handleClearClick}>
             CLEAR ALL
