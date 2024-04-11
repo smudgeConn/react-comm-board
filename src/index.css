@@ -3,15 +3,13 @@
 * {
   box-sizing: border-box;
   background-color: #fdfffc;
-  border-radius: .5rem;
-  max-width: 100%;
-  max-height: 100%;
-  gap: .5em;
-  /* margin: .01em; */
+  border-radius: .5em;
+  /* gap: .5em; */
+  margin: .25em;
 }
 
 body {
-  margin: 0;
+  /* margin: 0; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -25,40 +23,36 @@ code {
 }
 .app {
   /* background-color: yellow; */
-  display: grid;
-  grid-template-columns: repeat(14, 1fr);
-  grid-template-rows: repeat(14, 1fr);
-  /* max-height: 100dvh; */
-  margin: 1em;
+  display: block;
+  max-height: 100dvh;
 }
 
 .side-nav {
   /* background-color: orange; */
-  
-  grid-row-start: 1;
-  grid-row-end: -1;
-  grid-column-start: 1;
-  grid-column-end: 2;
 }
 
 .message-window {
   /* background-color: aqua; */
 
-  grid-row-start: 1;
-  grid-row-end: 3;
-  grid-column-start: 2;
-  grid-column-end: -1;
-
   display: grid;
   grid-template-columns: 90% 10%;
+
+
+
+  max-width: 100%;
+  height: auto;
+  min-height: 100px;
 
 }
 
 .message {
   background-color: black;
-
+  grid-column: 1;
   display: flex;
-
+  flex: auto;
+  height: 13dvh;
+  align-items: center;
+  padding-left: 5px;
 }
 
 .message-buttons {
@@ -81,24 +75,23 @@ code {
 .nav-bar {
 background-color: grey;
 
-grid-row-start: 3;
+/* grid-row-start: 3;
 grid-row-end: 4;
 grid-column-start: 2;
-grid-column-end: -1;
+grid-column-end: -1; */
 
 }
 
 .board {
   /* background-color: LIME; */
 
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 
-  grid-row-start: 4;
-  grid-row-end: -1;
+  /* grid-row-start: 3;
+  grid-row-end: 6;
   grid-column-start: 2;
-  grid-column-end: -1;
+  grid-column-end: -1; */
 }
 
 .message-word{
@@ -106,29 +99,27 @@ grid-column-end: -1;
 }
 
 .my-button {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1fr;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* align-content: center; */
-  justify-items: center;
-  flex: 0 0 10%;
+  display: block;
+
   border: .25em solid black;
-  max-height: 200px;
+  
+  height: 12dvh;
+  width: 12dvw;
+
+  text-align: center;
+
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .text {
   /* background-color: magenta; */
-  font-size: 2em;
-  grid-row: 2;
-  align-self: center;
-  justify-self: center;
+  display: block;
+  font-size: 1.5vw;
 }
 
 .image {
-  margin-top: .5em;
-  grid-row: 1;
-  align-self: center;
-  justify-self: center;
+  max-width: 100%;
+  height: auto;
+  max-height: 90px;
 }

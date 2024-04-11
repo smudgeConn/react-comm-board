@@ -116,13 +116,6 @@ let currentMessageIndex = -1; // -1 means no message is selected
 // IN: none
 // OUT: a div with a message window and a board
 export default function App() {
-  //
-  // handleButtonClick function
-  // IN: word (type: object)
-  // ACTION: make a copy of the message array,
-  // add a Button component to the end of the array,
-  // and set the message state to the new array
-  // OUT: none
   function putWordInMessage(word) {
     const nextMessage = message.slice();
     if (nextMessage.length < 9) {
@@ -197,7 +190,7 @@ export default function App() {
   return (
     <div className="app">
       <ArrowsDoStuff />
-      <div className="side-nav">side-nav</div>
+      {/* <div className="side-nav">side-nav</div> */}
       <div className="message-window">
         <Message message={message} />
         <div className="message-buttons">
@@ -214,6 +207,7 @@ export default function App() {
         {universalCoreVocabulary.map((word) => {
           return (
             <MyButton
+              className="my-button"
               key={word.text}
               word={word}
               handleButtonClick={() => putWordInMessage(word)}
