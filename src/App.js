@@ -30,50 +30,49 @@ import canIcon from "./images/canIcon.svg";
 import putIcon from "./images/putIcon.svg";
 import finishedIcon from "./images/finishedIcon.svg";
 import onIcon from "./images/onIcon.svg";
+import { type } from "@testing-library/user-event/dist/type";
 // import differentIcon from "./images/differentIcon.svg";
-// import goodIcon from "./images/goodIcon.svg";
-// import heIcon from "./images/heIcon.svg";
-// import sheIcon from "./images/sheIcon.svg";
+import goodIcon from "./images/goodIcon.svg";
+import heIcon from "./images/heIcon.svg";
+import sheIcon from "./images/sheIcon.svg";
 
-// universalCoreVocabulary array:
-// an array of objects with text and image properties
 const universalCoreVocabulary = [
-  { text: "like", image: likeIcon },
-  { text: "want", image: wantIcon },
-  { text: "get", image: getIcon },
-  { text: "make", image: makeIcon },
-  { text: "good" },
-  { text: "more", image: moreIcon },
-  { text: "not", image: notIcon },
-  { text: "go", image: goIcon },
-  { text: "look", image: lookIcon },
-  { text: "turn", image: turnIcon },
-  { text: "help", image: helpIcon },
-  { text: "different" },
-  { text: "I", image: iIcon },
-  { text: "he" },
-  { text: "open", image: openIcon },
-  { text: "do", image: doIcon },
-  { text: "put", image: putIcon },
-  { text: "same" },
-  { text: "you", image: youIcon },
-  { text: "she" },
-  { text: "that", image: thatIcon },
-  { text: "up" },
-  { text: "all", image: allIcon },
-  { text: "some", image: someIcon },
-  { text: "it", image: itIcon },
-  { text: "here", image: hereIcon },
-  { text: "in", image: inIcon },
-  { text: "on", image: onIcon },
-  { text: "can", image: canIcon },
-  { text: "finished", image: finishedIcon },
-  { text: "where", image: whereIcon },
-  { text: "what", image: whatIcon },
-  { text: "why" },
-  { text: "who", image: whoIcon },
-  { text: "when" },
-  { text: "stop", image: stopIcon },
+  { text: "like", image: likeIcon, type: "verb" },
+  { text: "want", image: wantIcon, type: "verb" },
+  { text: "get", image: getIcon, type: "verb" },
+  { text: "make", image: makeIcon, type: "verb" },
+  { text: "good", image: goodIcon, type: "description" },
+  { text: "more", image: moreIcon, type: "description" },
+  { text: "not", image: notIcon, type: "negation" },
+  { text: "go", image: goIcon, type: "verb" },
+  { text: "look", image: lookIcon, type: "verb" },
+  { text: "turn", image: turnIcon, type: "verb" },
+  { text: "help", image: helpIcon, type: "verb" },
+  { text: "different", type: "description" },
+  { text: "I", image: iIcon, type: "pronoun" },
+  { text: "he", image: heIcon, type: "pronoun" },
+  { text: "open", image: openIcon, type: "verb" },
+  { text: "do", image: doIcon, type: "verb" },
+  { text: "put", image: putIcon, type: "verb" },
+  { text: "same", type: "description" },
+  { text: "you", image: youIcon, type: "pronoun" },
+  { text: "she", image: sheIcon, type: "pronoun" },
+  { text: "that", image: thatIcon, type: "pronoun" },
+  { text: "up", type: "preposition" },
+  { text: "all", image: allIcon, type: "description" },
+  { text: "some", image: someIcon, type: "description" },
+  { text: "it", image: itIcon, type: "pronoun" },
+  { text: "here", image: hereIcon, type: "preposition" },
+  { text: "in", image: inIcon, type: "preposition" },
+  { text: "on", image: onIcon, type: "preposition" },
+  { text: "can", image: canIcon, type: "verb" },
+  { text: "finished", image: finishedIcon, type: "verb" },
+  { text: "where", image: whereIcon, type: "question" },
+  { text: "what", image: whatIcon, type: "question" },
+  { text: "why", type: "question" },
+  { text: "who", image: whoIcon, type: "question" },
+  { text: "when", type: "question" },
+  { text: "stop", image: stopIcon, type: "verb" },
 ];
 
 // Button component
@@ -202,7 +201,7 @@ export default function App() {
           </button>
         </div>
       </div>
-      <div className="nav-bar">N A V B A R </div>
+      <div className="nav-bar"> </div>
       <div className="board">
         {universalCoreVocabulary.map((word) => {
           return (
