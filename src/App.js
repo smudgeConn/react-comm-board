@@ -1,6 +1,11 @@
 import "./App.css";
 import "./index.css";
 import { useState, useEffect } from "react";
+import differentIcon from "./images/differentIcon.svg";
+import whenIcon from "./images/whenIcon.svg";
+import upIcon from "./images/upIcon.svg";
+import sameIcon from "./images/sameIcon.svg";
+import whyIcon from "./images/whyIcon.svg";
 import iIcon from "./images/meIcon.svg";
 import wantIcon from "./images/wantIcon.svg";
 import getIcon from "./images/getIcon.svg";
@@ -9,7 +14,7 @@ import notIcon from "./images/notIcon.svg";
 import moreIcon from "./images/moreIcon.svg";
 import thatIcon from "./images/thatIcon.svg";
 import whoIcon from "./images/whoIcon.svg";
-import mineIcon from "./images/mineIcon.svg";
+// import mineIcon from "./images/mineIcon.svg";
 import goIcon from "./images/goIcon.svg";
 import lookIcon from "./images/lookIcon.svg";
 import turnIcon from "./images/turnIcon.svg";
@@ -30,8 +35,7 @@ import canIcon from "./images/canIcon.svg";
 import putIcon from "./images/putIcon.svg";
 import finishedIcon from "./images/finishedIcon.svg";
 import onIcon from "./images/onIcon.svg";
-import { type } from "@testing-library/user-event/dist/type";
-// import differentIcon from "./images/differentIcon.svg";
+// import { type } from "@testing-library/user-event/dist/type";
 import goodIcon from "./images/goodIcon.svg";
 import heIcon from "./images/heIcon.svg";
 import sheIcon from "./images/sheIcon.svg";
@@ -48,17 +52,17 @@ const universalCoreVocabulary = [
   { text: "look", image: lookIcon, type: "verb" },
   { text: "turn", image: turnIcon, type: "verb" },
   { text: "help", image: helpIcon, type: "verb" },
-  { text: "different", type: "description" },
+  { text: "different", image: differentIcon, type: "description" },
   { text: "I", image: iIcon, type: "pronoun" },
   { text: "he", image: heIcon, type: "pronoun" },
   { text: "open", image: openIcon, type: "verb" },
   { text: "do", image: doIcon, type: "verb" },
   { text: "put", image: putIcon, type: "verb" },
-  { text: "same", type: "description" },
+  { text: "same", image: sameIcon, type: "description" },
   { text: "you", image: youIcon, type: "pronoun" },
   { text: "she", image: sheIcon, type: "pronoun" },
   { text: "that", image: thatIcon, type: "pronoun" },
-  { text: "up", type: "preposition" },
+  { text: "up", image: upIcon, type: "preposition" },
   { text: "all", image: allIcon, type: "description" },
   { text: "some", image: someIcon, type: "description" },
   { text: "it", image: itIcon, type: "pronoun" },
@@ -69,9 +73,9 @@ const universalCoreVocabulary = [
   { text: "finished", image: finishedIcon, type: "verb" },
   { text: "where", image: whereIcon, type: "question" },
   { text: "what", image: whatIcon, type: "question" },
-  { text: "why", type: "question" },
+  { text: "why", image: whyIcon, type: "question" },
   { text: "who", image: whoIcon, type: "question" },
-  { text: "when", type: "question" },
+  { text: "when", image: whenIcon, type: "question" },
   { text: "stop", image: stopIcon, type: "verb" },
 ];
 
