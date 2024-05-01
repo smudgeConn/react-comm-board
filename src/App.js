@@ -211,8 +211,9 @@ export default function App() {
           return (
             <MyButton
               className="my-button"
-              key={word.text}
               word={word}
+              key={word.text}
+              type={word.type}
               handleButtonClick={() => putWordInMessage(word)}
             />
           );
